@@ -23,16 +23,17 @@
 }*/
 
 pipeline {
-    agent {
-        docker {
-            image 'alpine'
-        }
+  agent {
+    docker {
+      label 'docker'  
+      image 'alpine'
     }
-    stages {
-        stage('Test Docker Agent') {
-            steps {
-                sh 'echo "Hello from inside Docker!"'
-            }
-        }
+  }
+  stages {
+    stage('Test Docker Agent') {
+      steps {
+        sh 'echo "Hello from inside Docker!"'
+      }
     }
+  }
 }
