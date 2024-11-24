@@ -11,12 +11,27 @@
   }
 }*/
 
-pipeline {
+/*pipeline {
     agent any
     stages {
         stage('Test Docker Access') {
             steps {
                 sh 'docker --version'
+            }
+        }
+    }
+}*/
+
+pipeline {
+    agent {
+        docker {
+            image 'alpine'
+        }
+    }
+    stages {
+        stage('Test Docker Agent') {
+            steps {
+                sh 'echo "Hello from inside Docker!"'
             }
         }
     }
