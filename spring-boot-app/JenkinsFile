@@ -25,9 +25,7 @@
 pipeline {
   agent {
     label 'docker'
-    docker {  
-      image 'alpine'
-    }
+    image 'alpine'
   }
   stages {
     stage('Test Docker Agent') {
