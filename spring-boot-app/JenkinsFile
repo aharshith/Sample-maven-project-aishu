@@ -4,6 +4,7 @@ pipeline {
     stage('Build and Test') {
       steps {
         sh 'ls -ltr'
+        sh 'apache-maven-3.9.9-bin.zip && unzip apache-maven-3.9.9-bin.zip'
         // build the project and create a JAR file
         sh 'cd spring-boot-app && mvn clean package'
       }
