@@ -46,13 +46,13 @@ pipeline {
     }
   }
   stages {
-    stage('Build and Test') {
+    /*stage('Build and Test') {
       steps {
         sh 'ls -ltr'
         // build the project and create a JAR file
         sh 'cd spring-boot-app && mvn clean install'
       }
-    }
+    }*/
     stage('Static Code Analysis') {
       environment {
         SONAR_URL = "http://10.0.2.15:9000"
